@@ -11,54 +11,55 @@
 <body>
 <div id="exercise">
   <!-- ToDo 1: Fill the <p> below with your Name and Age - using Interpolation -->
-  <p>VueJS is pretty cool - YOUR_NAME (AGE)</p>
+  <p>Problem 1: VueJS is pretty cool - {{ name }} ({{age}})</p>
 
   <!-- ToDo 2: Fill the <p> below with your age, multiplied by 3 -->
-  <p></p>
+  <p>Problem 2: Age multiplied by 3: {{ age * 3 }}</p>
 
   <!-- ToDo 3: Call a function to output, in the <p> below, a random float between 0 and 1 (Math.random()) -->
-  <p></p>
+  Project 3:<p>{{ randD }}</p>
 
   <!-- ToDo 4: Pre-Populate this input with your name (set the "value" attribute) -->
   <div>
-    <input type="text">
+    ----------- <input type="text" :value="name"> 
   </div>
 
   <!-- ToDo 5: Show an alert when the Button gets clicked -->
   <div>
-    <button>Show Alert</button>
+    Problem 5: <button v-on:click="alertMe">Show Alert</button>
   </div>
 
   <!-- ToDo 6: Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
   <div>
-    <input type="text">
-    <p>{{ value }}</p>
+    Problem 6: <input v-on:keyup="logStrokes" type="text">
+    <p>{{ textValue }}</p>
   </div>
   
    <!-- ToDo 7: Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
  <div>
-   <button @click="startEffect">Start Effect</button>
-   <div id="effect"></div>
+   Project 7:<button @click="startEffect">Start Effect</button>
+   <div id="effect" :class="{highlight: isHighlighted, shrink: isShrunk}"></div>
  </div>
   
    <!-- ToDo 8: Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
  <div>
-    <button v-on:click="startProgress">Start Progress</button>
-    <div></div>
+  Project 8: <button v-on:click="startProgress">Start Progress</button>
+    <div id="bar" :style="barStyle"></div>
  </div>
   
  <!-- ToDo 9: Hook up the button to toggle the display of the two paragraphs. Use both v-if and v-show and inspect the elements to see the difference -->
  <div>
-   <button>Toggle</button>
-   <p>You either see me ...</p>
-   <p>...or me</p>
-   <p>You either see me ...</p>
-   <p>...or me</p>
+   Problem 9: <button @click="showP = !showP">Toggle</button>
+   <p v-if="showP">You either see me ...</p>
+   <p v-else>...or me</p>
+   <p v-if="showP">You either see me ...</p>
+   <p v-else>...or me</p>
  </div>
 
  <!-- ToDo 10: Output an <ul> of array elements of your choice. Also print the index of each element. -->
- <ul>
-   <li></li>
+  Project 10: 
+  <ul>
+   <li v-for="(n,index) in array">{{ n }} - {{ index }}</li>
  </ul>
  </div>
  <script src="app.js"></script>
